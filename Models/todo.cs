@@ -13,10 +13,10 @@ namespace RestfulApiTodo.Models
     public class Todo
     {
         //model the data
-        public string id { get; set; }
-        public string title { get; set; } 
-        public string description { get; set; }
-        public bool isComplete { get; set; }
-        public DateTime date { get; set; }
+        public string Id { get; set; }
+        public string Title { get; set; } 
+        public string Description { get; set; }
+        public bool IsComplete { get; set; }
+        public DateTime Date { get; set; }
     }
 }

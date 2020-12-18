@@ -26,25 +26,33 @@ namespace RestfulApiTodo.TodoData
         {
             new Todo()
             {
-                id = "123",
-                title = "new title",
-                description = "description",
-                isComplete = false,
-                date = new DateTime()
+                Id = "123",
+                Title = "new title",
+                Description = "description",
+                IsComplete = false,
+                Date = new DateTime(),
             },
             new Todo()
             {
-                id = "456",
-                title = "another new title",
-                description = "description2",
-                isComplete = false,
-                date = new DateTime()
+                Id = "456",
+                Title = "another new title",
+                Description = "description2",
+                IsComplete = false,
+                Date = new DateTime()
             }
         };
 
         public Todo AddTodo(Todo todo)
         {
-            throw new NotImplementedException();
+            //generate random number for id
+            Random rnd = new Random();
+            todo.Id = rnd.Next(1000).ToString();
+
+            //default isComplete to false
+            todo.IsComplete = false;
+            todos.Add(todo);
+
+            return todo;
         }
 
         public Todo DeleteTodo(Todo todo)
@@ -59,7 +67,9 @@ namespace RestfulApiTodo.TodoData
 
         public Todo GetTodo(string id)
         {
-            throw new NotImplementedException();
+            //single todo by id
+            //SingleOrDefault takes in a lamda expression to match the Id of the object
+            return todos.SingleOrDefault(x => x.Id == id);
         }
 
         public List<Todo> GetTodos()
