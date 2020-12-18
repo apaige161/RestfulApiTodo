@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace RestfulApiTodo.Controllers
 {
+    /********************************
+     *
+     *  Handles routes
+     * 
+    *********************************/
     
     [ApiController]
     public class TodosController : ControllerBase

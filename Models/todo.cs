@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace RestfulApiTodo.Models
 {
-    
+    /********************************
+     *
+     *  Properties for the model of data
+     * 
+    */ 
     public class Todo
     {
         //model the data

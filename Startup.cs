@@ -28,6 +28,7 @@ namespace RestfulApiTodo
         {
             services.AddControllers();
 
+            //spin up data
             services.AddSingleton<ITodoData, MockTodoData>();
         }
 
