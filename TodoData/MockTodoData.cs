@@ -44,25 +44,46 @@ namespace RestfulApiTodo.TodoData
 
         public Todo AddTodo(Todo todo)
         {
+            /*
+             *
+             *  In postman you must send the post request using JSON in this format
+             *      "title": "new title",
+                    "description": "new description"
+             *
+            */ 
+
             //generate random number for id
             Random rnd = new Random();
             todo.Id = rnd.Next(1000).ToString();
 
             //default isComplete to false
             todo.IsComplete = false;
+
+            //push new todo to list of todos
             todos.Add(todo);
 
+            //this makes the compiler happy
             return todo;
+
         }
 
         public Todo DeleteTodo(Todo todo)
         {
-            throw new NotImplementedException();
+            todos.Remove(todo);
+            return todo;
         }
 
-        public Todo EditTodo()
+        public Todo EditTodo(Todo todo)
         {
-            throw new NotImplementedException();
+            //get todo by id
+            var foundTodo = GetTodo(todo.Id);
+
+            //override values
+            foundTodo.Title = todo.Title;
+            foundTodo.Description = todo.Description;
+
+            //make compiler happy
+            return foundTodo;
         }
 
         public Todo GetTodo(string id)

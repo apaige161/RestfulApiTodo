@@ -7,9 +7,9 @@ namespace RestfulApiTodo.Models
 {
     /********************************
      *
-     *  Properties for the model of data
+     *  Properties for the data
      * 
-    */ 
+    *********************************/ 
     public class Todo
     {
         //model the data

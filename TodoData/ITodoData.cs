@@ -21,7 +21,7 @@ namespace RestfulApiTodo.TodoData
         Todo DeleteTodo(Todo todo);
 
         //edit todo
-        Todo EditTodo();
+        Todo EditTodo(Todo todo);
         
 
     };
